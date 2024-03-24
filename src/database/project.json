@@ -1,0 +1,70 @@
+{
+  "root": [
+    {
+      "name": "bin",
+      "sub": []
+    },
+    {
+      "name": "@types",
+      "sub": []
+    },
+    {
+      "name": "assets",
+      "sub": []
+    },
+    {
+      "name": "components",
+      "sub": [
+        {
+          "name": "atoms",
+          "sub": []
+        },
+        {
+          "name": "molecules",
+          "sub": []
+        }
+      ]
+    },
+    {
+      "name": "constants",
+      "sub": []
+    },
+    {
+      "name": "context",
+      "sub": []
+    },
+    {
+      "name": "routes",
+      "sub": []
+    },
+    {
+      "name": "screens",
+      "sub": []
+    },
+    {
+      "name": "translate",
+      "sub": [
+        {
+          "name": "resources",
+          "sub": []
+        }
+      ]
+    },
+    {
+      "name": "utils",
+      "sub": []
+    },
+    {
+      "name": "styles",
+      "sub": []
+    },
+    {
+      "name": "databases",
+      "sub": []
+    },
+    {
+      "name": "classes",
+      "sub": []
+    }
+  ]
+}
