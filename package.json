@@ -1,7 +1,7 @@
 {
   "name": "jarbas-folder",
   "version": "0.0.1",
-  "description": "",
+  "description": "This is a simple way to create folders and optimize repetitive tasks",
   "main": "index.js",
   "engines": {
     "node": "20.8.0"
@@ -15,7 +15,7 @@
   },
   "keywords": [],
   "author": "0xfalx <0xfalx@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "prompts": "^2.4.2",
     "typescript": "^5.4.3"
