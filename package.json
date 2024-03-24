@@ -1,6 +1,6 @@
 {
   "name": "@theturtle/folder",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This is a simple way to create folders and optimize repetitive tasks",
   "main": "index.js",
   "engines": {
@@ -34,10 +34,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/r89shi/jarbas-folder.git"
+    "url": "git+https://github.com/r89shi/theturtle-folder.git"
   },
   "bugs": {
-    "url": "https://github.com/r89shi/jarbas-folder/issues"
+    "url": "https://github.com/r89shi/theturtle-folder/issues"
   },
-  "homepage": "https://github.com/r89shi/jarbas-folder#readme"
+  "homepage": "https://github.com/r89shi/theturtle-folder#readme"
 }
