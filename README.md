@@ -19,7 +19,7 @@ npx @theturtle/folder
 ## 1. Clone the repository
 
 ```
-git clone https://github.com/r89shi/jarbas-folder.git
+git clone https://github.com/r89shi/theturtle-folder.git
 ```
 
 ## 2. Install the dependencies
