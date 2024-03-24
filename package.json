@@ -1,5 +1,5 @@
 {
-  "name": "jarbas-folder",
+  "name": "@theturtle/folder",
   "version": "0.0.1",
   "description": "This is a simple way to create folders and optimize repetitive tasks",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "node": "20.8.0"
   },
   "bin": {
-    "jarbas-folder": "dist/bin/index.js"
+    "folder": "dist/bin/index.js"
   },
   "scripts": {
     "start": "node dist/bin/index.js",

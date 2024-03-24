@@ -8,7 +8,13 @@
 
 - **Node**: (20.8.0)
 
-# 🚀 Installation
+# 🚀 Execute
+
+```
+npx @theturtle/folder
+```
+
+# ⚙️ Installation
 
 ## 1. Clone the repository
 
