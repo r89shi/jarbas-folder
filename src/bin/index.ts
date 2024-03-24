@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { Prompts } from '../utils/Prompts';
 import { Mkdir } from '../utils/Mkdir';
 import { QUESTIONS } from '../constants/questions';
@@ -35,7 +37,7 @@ class Main {
     let folders: NMkdir.IFolderJson = JSON.parse(
       await this.mkdir.readFile({
         fileName: question.idPicker,
-        dirs: ['src', 'database']
+        dirs: ['database']
       })
     );
 
@@ -49,8 +51,7 @@ class Main {
 
   async listPossibilities(): Promise<NPrompts.IChoices[]> {
     const dbFolders = await this.mkdir.lsFolder({
-      folderName: 'database',
-      dirs: ['src']
+      folderName: 'database'
     });
 
     const possibilities: NPrompts.IChoices[] = dbFolders

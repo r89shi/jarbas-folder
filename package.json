@@ -13,9 +13,12 @@
     "start": "node dist/bin/index.js",
     "watch": "tsx watch src/bin/index.ts",
     "dev": "tsx src/bin/index.ts",
-    "build": "tsup src ./dist",
+    "build": "tsup src && xcopy .\\database .\\dist\\database /i",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [],
   "author": "0xfalx <0xfalx@gmail.com>",
   "license": "MIT",
