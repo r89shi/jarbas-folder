@@ -6,6 +6,9 @@
   "engines": {
     "node": "20.8.0"
   },
+  "bin": {
+    "jarbas-folder": "dist/bin/index.js"
+  },
   "scripts": {
     "start": "node dist/bin/index.js",
     "watch": "tsx watch src/bin/index.ts",
@@ -25,5 +28,13 @@
     "@types/prompts": "^2.4.9",
     "tsup": "^8.0.2",
     "tsx": "^4.7.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r89shi/jarbas-folder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/r89shi/jarbas-folder/issues"
+  },
+  "homepage": "https://github.com/r89shi/jarbas-folder#readme"
 }
