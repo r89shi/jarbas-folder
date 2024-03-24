@@ -34,10 +34,65 @@ yarn install
 pnpm install
 ```
 
-## 3. Create new folder structure
+## 📦 3. Build
 
-1. Create a `JSON` file, inside the `database` folder.
-2. Inside the `JSON` file, insert the follow structure:
+```
+npm run build
+```
+
+**OR**
+
+```
+yarn build
+```
+
+**OR**
+
+```
+pnpm build
+```
+
+## 🐇 4. Run
+
+```
+npm start
+```
+
+**OR**
+
+```
+yarn start
+```
+
+**OR**
+
+```
+pnpm start
+```
+
+## 🐞 Run developer mode
+
+```
+npm run dev
+```
+
+**OR**
+
+```
+yarn dev
+```
+
+**OR**
+
+```
+pnpm dev
+```
+
+# 📂 Create new folder structure
+
+Create a `JSON` file into the `database` folder: `src/database/fileName.json`
+
+Open the `JSON` file and insert the code:
 
 ```JSON
 {
@@ -45,45 +100,43 @@ pnpm install
 }
 ```
 
-The `root` is required for any `JSON` file.
+`root` is required for any `JSON` file. To create a new folder:
 
 ```JSON
 {
-  "name": "First folder name",
-  "sub": []
-}
-```
-
-Inside the `root`, we have the structure following by:
-
-**name** : Folder name.
-
-**sub** : Sub directories for this folder. To create a sub folders, insert into `sub` the same structure.
-
-**Example:**
-
-```JSON
-{
-  "name": "First folder name",
-  "sub": [
+  "root": [
     {
-      "name": "Sub folder name",
+      "name": "First folder name",
       "sub": []
     }
   ]
 }
 ```
 
-## 4. Run the android
+> **name** : Folder name.
 
-For this step connect a physical device on USB.
+> **sub** : Sub directories for this folder.
 
-```
-npm android
-```
+To create a sub folders, insert into `sub` the same structure.
 
-or
+**Example:**
 
-```
-yarn android
+```JSON
+{
+  "root": [
+    {
+      "name": "First folder name",
+      "sub": [
+        {
+          "name": "Sub folder name",
+          "sub": []
+        },
+        {
+          "name": "Another sub folder name",
+          "sub": []
+        }
+      ]
+    }
+  ]
+}
 ```

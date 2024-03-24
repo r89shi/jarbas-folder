@@ -10,7 +10,7 @@
     "start": "node dist/bin/index.js",
     "watch": "tsx watch src/bin/index.ts",
     "dev": "tsx src/bin/index.ts",
-    "build": "tsup src && cp -r ./templates ./dist",
+    "build": "tsup src ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
