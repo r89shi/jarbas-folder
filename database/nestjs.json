@@ -1,0 +1,39 @@
+{
+  "root": [
+    {
+      "name": "interfaces",
+      "files": [
+        {
+          "sufix": "interface",
+          "prefix": "create",
+          "ext": "ts"
+        },
+        {
+          "sufix": "interface",
+          "prefix": "update",
+          "ext": "ts"
+        },
+        {
+          "sufix": "interface",
+          "prefix": "delete",
+          "ext": "ts"
+        },
+        {
+          "sufix": "interface",
+          "prefix": "find",
+          "ext": "ts"
+        }
+      ]
+    },
+    {
+      "name": "repositories",
+      "files": [
+        {
+          "sufix": "repository",
+          "prefix": "",
+          "ext": "ts"
+        }
+      ]
+    }
+  ]
+}

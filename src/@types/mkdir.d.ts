@@ -13,6 +13,12 @@ namespace NMkdir {
     dirs?: string[];
   }
 
+  interface IFileJson {
+    sufix: string;
+    prefix: string;
+    ext: string;
+  }
+
   interface IFolderJson {
     root: IFolderJsonSub[];
   }
@@ -20,6 +26,7 @@ namespace NMkdir {
   interface IFolderJsonSub {
     name: string;
     sub: IFolderJsonSub[];
+    files?: IFileNest[];
   }
 
   interface IClass {

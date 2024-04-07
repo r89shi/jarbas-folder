@@ -2,8 +2,6 @@
 
 import { Prompts } from '../utils/Prompts';
 import { Mkdir } from '../utils/Mkdir';
-import { QUESTIONS } from '../constants/questions';
-import _project from '../database/project.json';
 
 class Main {
   prompts: NPrompts.IClass;
@@ -159,14 +157,26 @@ class Main {
       }
 
       // Create Sub Folders
-      if (folder.sub.length <= 0) {
-        continue;
+      if (!!folder?.sub && folder.sub.length > 0) {
+        this.folderNavigator({
+          folders: folder.sub,
+          dirs: props.dirs?.concat(folder.name)
+        });
       }
 
-      this.folderNavigator({
-        folders: folder.sub,
-        dirs: props.dirs?.concat(folder.name)
-      });
+      // Create files
+      if (!!folder?.files && folder.files.length > 0) {
+        for (const file of folder.files) {
+          const fi: NMkdir.IFileJson = file;
+          const pre = !!fi.prefix ? `${fi.prefix}-` : '';
+          const su = !!fi.sufix ? `-${fi.sufix}` : '';
+          this.mkdir.createFile({
+            content: '',
+            fileName: `${pre}${this.folderName}${su}.${fi.ext}`,
+            dirs: props.dirs?.concat(folder.name)
+          });
+        }
+      }
     }
   }
 
