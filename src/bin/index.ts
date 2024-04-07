@@ -169,7 +169,7 @@ class Main {
         for (const file of folder.files) {
           const fi: NMkdir.IFileJson = file;
           const pre = !!fi.prefix ? `${fi.prefix}-` : '';
-          const su = !!fi.sufix ? `-${fi.sufix}` : '';
+          const su = !!fi.sufix ? `.${fi.sufix}` : '';
           this.mkdir.createFile({
             content: '',
             fileName: `${pre}${this.folderName}${su}.${fi.ext}`,

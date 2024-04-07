@@ -1,6 +1,6 @@
 {
   "name": "@theturtle/folder",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "This is a simple way to create folders and optimize repetitive tasks",
   "main": "index.js",
   "engines": {
