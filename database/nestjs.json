@@ -5,23 +5,53 @@
       "files": [
         {
           "sufix": "interface",
+          "prefix": "",
+          "ext": "ts",
+          "content": [
+            "export interface I${1} {",
+            "",
+            "}"
+          ]
+        },
+        {
+          "sufix": "interface",
           "prefix": "create",
-          "ext": "ts"
+          "ext": "ts",
+          "content": [
+            "export interface ICreate${1} {",
+            "",
+            "}"
+          ]
         },
         {
           "sufix": "interface",
           "prefix": "update",
-          "ext": "ts"
+          "ext": "ts",
+          "content": [
+            "export interface IUpdate${1} {",
+            "",
+            "}"
+          ]
         },
         {
           "sufix": "interface",
           "prefix": "delete",
-          "ext": "ts"
+          "ext": "ts",
+          "content": [
+            "export interface IDelete${1} {",
+            "",
+            "}"
+          ]
         },
         {
           "sufix": "interface",
           "prefix": "find",
-          "ext": "ts"
+          "ext": "ts",
+          "content": [
+            "export interface IFind${1} {",
+            "",
+            "}"
+          ]
         }
       ]
     },
@@ -31,7 +61,21 @@
         {
           "sufix": "repository",
           "prefix": "",
-          "ext": "ts"
+          "ext": "ts",
+          "content": [
+            "import { I${1} } from '../interfaces/${2}.interface';",
+            "import { ICreate${1} } from '../interfaces/create-${2}.interface';",
+            "import { IDelete${1} } from '../interfaces/delete-${2}.interface';",
+            "import { IFind${1} } from '../interfaces/find-${2}.interface';",
+            "import { IUpdate${1} } from '../interfaces/update-${2}.interface';",
+            "",
+            "export abstract class ${1}Repository {",
+            "  abstract find(props: IFind${1}): Promise<I${1} | NError.IResponseError>;",
+            "  abstract create(props: ICreate${1}): Promise<I${1} | NError.IResponseError>;",
+            "  abstract update(props: IUpdate${1}): Promise<I${1} | NError.IResponseError>;",
+            "  abstract delete(props: IDelete${1}): Promise<I${1} | NError.IResponseError>;",
+            "}"
+          ]
         }
       ]
     }

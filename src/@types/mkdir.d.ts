@@ -17,6 +17,7 @@ namespace NMkdir {
     sufix: string;
     prefix: string;
     ext: string;
+    content: string[];
   }
 
   interface IFolderJson {

@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { AMBIENT } from '../constants/ambient';
 
 export class Mkdir implements NMkdir.IClass {
   processDir: string;
@@ -42,16 +43,24 @@ export class Mkdir implements NMkdir.IClass {
 
   async lsFolder(props: NMkdir.IFolder): Promise<string[]> {
     // Local
-    // const dir = !props.dirs
-    //   ? path.join(this.processDir, props.folderName)
-    //   : path.join(this.processDir, ...props.dirs, props.folderName);
+    if (AMBIENT === 'dev') {
+      const dir = !props.dirs
+        ? path.join(this.processDir, props.folderName)
+        : path.join(this.processDir, ...props.dirs, props.folderName);
+
+      return await fs.readdirSync(dir);
+    }
 
     // NPM
-    const dir = !props.dirs
-      ? path.join(__dirname, '../', props.folderName)
-      : path.join(__dirname, '../', ...props.dirs, props.folderName);
+    if (AMBIENT === 'npm') {
+      const dir = !props.dirs
+        ? path.join(__dirname, '../', props.folderName)
+        : path.join(__dirname, '../', ...props.dirs, props.folderName);
 
-    return await fs.readdirSync(dir);
+      return await fs.readdirSync(dir);
+    }
+
+    return [];
   }
 
   async createFile(props: NMkdir.IFileCreate): Promise<void> {
@@ -72,15 +81,23 @@ export class Mkdir implements NMkdir.IClass {
 
   async readFile(props: NMkdir.IFile): Promise<string> {
     // Local
-    // const dir = !props.dirs
-    //   ? path.join(this.processDir, props.fileName)
-    //   : path.join(this.processDir, ...props.dirs, props.fileName);
+    if (AMBIENT === 'dev') {
+      const dir = !props.dirs
+        ? path.join(this.processDir, props.fileName)
+        : path.join(this.processDir, ...props.dirs, props.fileName);
+
+      return await fs.readFileSync(dir, { encoding: 'utf8', flag: 'r' });
+    }
 
     // NPM
-    const dir = !props.dirs
-      ? path.join(__dirname, '../', props.fileName)
-      : path.join(__dirname, '../', ...props.dirs, props.fileName);
+    if (AMBIENT === 'npm') {
+      const dir = !props.dirs
+        ? path.join(__dirname, '../', props.fileName)
+        : path.join(__dirname, '../', ...props.dirs, props.fileName);
 
-    return await fs.readFileSync(dir, { encoding: 'utf8', flag: 'r' });
+      return await fs.readFileSync(dir, { encoding: 'utf8', flag: 'r' });
+    }
+
+    return '';
   }
 }

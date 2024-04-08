@@ -170,14 +170,44 @@ class Main {
           const fi: NMkdir.IFileJson = file;
           const pre = !!fi.prefix ? `${fi.prefix}-` : '';
           const su = !!fi.sufix ? `.${fi.sufix}` : '';
+
+          const content = this.createContent({
+            sufix: fi.sufix,
+            prefix: fi.prefix,
+            name: this.folderName ?? '',
+            content: fi.content
+          });
+
           this.mkdir.createFile({
-            content: '',
+            content: content,
             fileName: `${pre}${this.folderName}${su}.${fi.ext}`,
             dirs: props.dirs?.concat(folder.name)
           });
         }
       }
     }
+  }
+
+  createContent(props: NIndex.ICreateContent) {
+    const { content, name, prefix, sufix } = props;
+
+    if (content.length <= 0) {
+      return '';
+    }
+
+    let makeContent = '';
+
+    for (const c of content) {
+      const s1 = name.replace(name[0], name[0].toUpperCase());
+      const s2 = name.toLocaleLowerCase();
+
+      let newContent = `${c}`.replace(/(\$\{1\})/g, s1);
+      newContent = `${newContent}`.replace(/(\$\{2\})/g, s2);
+
+      makeContent += `${newContent}\n`;
+    }
+
+    return makeContent;
   }
 
   async createAndCheck(props: NMkdir.IFolder): Promise<boolean> {
